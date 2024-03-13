@@ -38,3 +38,12 @@ jobs:
 
       - name: Run pytest
         run: pytest
+        
+      - name: Build package
+        run: |
+          python setup.py sdist bdist_wheel
+      - uses: actions/upload-artifact@v2
+        with:
+          name: python-package
+          path: dist/*
+          retention-days: 10 # Configure la période de rétention des artifacts
