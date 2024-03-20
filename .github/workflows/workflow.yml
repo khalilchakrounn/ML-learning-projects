@@ -41,7 +41,7 @@ jobs:
         
       - name: Build package
         run: |
-          python setup.py sdist bdist_wheel
+          python testmlops/setup.py sdist bdist_wheel
       - uses: actions/upload-artifact@v2
         with:
           name: python-package
